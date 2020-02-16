@@ -46,7 +46,7 @@ namespace CSharpDataStructures
             }
             
             Console.WriteLine("");
-            /*
+            
             //Matrix.
             Matrix A = new Matrix(
                 new Double[][]{
@@ -133,13 +133,43 @@ namespace CSharpDataStructures
             Console.WriteLine(E);
             Console.WriteLine(E.Rank);
             Console.WriteLine("");
-            Console.WriteLine(E.ToXml());
-            Console.WriteLine(F2.ToXml());
+            
+            Matrix S = new Matrix(new Double[][]{
+                new Double[]{5,2,4,7,1,2},
+                new Double[]{1.3,1.5,4,6,-2,-1},
+                new Double[]{-1,0,0,1,2,0},
+                new Double[]{0,1,2,2,5,1},
+                new Double[]{4,11,1,12,5,6},
+                new Double[]{7,6,5,7,5,3}
+            });
+            Console.WriteLine("Matrix S:\n"+S);
+            //Console.WriteLine("F: Determinant(S) = "+S.MatrixDeterminant());
+            Console.WriteLine("det S = "+S.Determinant);
+            Matrix S2 = new Matrix(new Double[][]{
+                new Double[]{1,2,3,4,5,10,0,1,5,0,1},
+                new Double[]{7,4,3,2,6,7,-4,0,1,0.5,-1},
+                new Double[]{1,1,0,5,0,6,0,0.5,3.2,1,1},
+                new Double[]{0,0,0,4,0,0,1,0,0,1,1},
+                new Double[]{5,1,1,1,1,1,1,1,1,1,-1},
+                new Double[]{22,0,0,0,-3,0,-1,-4,-1,-3.5,1},
+                new Double[]{-7,0,-1,0,0,0,0,0,0,0,1},
+                new Double[]{1,1,2,3,-6,10,-16,0,0,-1,-1},
+                new Double[]{-9,8,-7,6,5,-4,3,-2,-1,-1.75,1},
+                new Double[]{-1,1,-1,1,1,1,1,1,1,1,-1},
+                new Double[]{5,4,-1,-1,-1,-1,1,0,0,1,1}
+            });
+            Console.WriteLine("Matrix S2: \n"+S2);
+            Console.WriteLine("det S2 = "+S2.Determinant);
+            
+            
+            //Console.WriteLine(E.ToXml());
+            //Console.WriteLine(F2.ToXml());
             //Console.WriteLine(F2*F2.GetInverse());
             //Console.WriteLine("Rank F = {0}",F.Rank);
             //Console.WriteLine(Dm * D); //A^-1 * A = E.
             
             
+            /*
             //ArrayList,LinkedList,Queue test.
             AListTest moduleC1 = new AListTest();
             moduleC1.Execute();
@@ -168,6 +198,7 @@ namespace CSharpDataStructures
            */
             
             
+            /*TREE TEST
             Console.WriteLine("");
             TreeTest trt = new TreeTest();
             trt.Execute();//*+ab+ac
@@ -265,6 +296,7 @@ namespace CSharpDataStructures
             Console.WriteLine("}");
             Console.WriteLine("Adjacent Matrix of Graph\n");
             Console.WriteLine(GR.GetAdjacentMatrix().ToString());
+            */
         }
     }
 }

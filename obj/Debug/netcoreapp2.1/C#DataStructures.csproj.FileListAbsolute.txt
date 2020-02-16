@@ -4,7 +4,6 @@ C:\DotNetFramework\Core\C#DataStructures\bin\Debug\netcoreapp2.1\C#DataStructure
 C:\DotNetFramework\Core\C#DataStructures\bin\Debug\netcoreapp2.1\C#DataStructures.dll
 C:\DotNetFramework\Core\C#DataStructures\bin\Debug\netcoreapp2.1\C#DataStructures.pdb
 C:\DotNetFramework\Core\C#DataStructures\obj\Debug\netcoreapp2.1\C#DataStructures.csprojAssemblyReference.cache
-C:\DotNetFramework\Core\C#DataStructures\obj\Debug\netcoreapp2.1\C#DataStructures.csproj.CoreCompileInputs.cache
 C:\DotNetFramework\Core\C#DataStructures\obj\Debug\netcoreapp2.1\C#DataStructures.AssemblyInfoInputs.cache
 C:\DotNetFramework\Core\C#DataStructures\obj\Debug\netcoreapp2.1\C#DataStructures.AssemblyInfo.cs
 C:\DotNetFramework\Core\C#DataStructures\obj\Debug\netcoreapp2.1\C#DataStructures.dll

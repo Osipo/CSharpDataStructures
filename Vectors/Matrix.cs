@@ -5,7 +5,8 @@ using System.Text;
 using System.Xml;
 using System.Collections;
 using System.Collections.Generic;
-using STACK = CSharpDataStructures.Structures.Lists.LinkedStack<CSharpDataStructures.Vectors.Matrix>;
+using STACK = CSharpDataStructures.Structures.Lists.LinkedStack<CSharpDataStructures.Vectors.SMatrixEntry>;
+using STACK2 = CSharpDataStructures.Structures.Lists.LinkedStack<System.Double>;
 namespace CSharpDataStructures.Vectors {
     enum MatrixReduce { ByRow = 1, ByColumn = 2}
     class Matrix : IDisposable, IEnumerable<Double> {
@@ -196,6 +197,7 @@ namespace CSharpDataStructures.Vectors {
         }
         
         
+        //Change matrix.
         public void ScalarMul(Double c){
             for(int i = 0; i < _base.Length; i++){
                 Double[] a = _base[i];
@@ -237,6 +239,7 @@ namespace CSharpDataStructures.Vectors {
             return new Matrix(nb);
         }
         
+        //RETURNS: new Matrix.
         public Matrix Add(Matrix B){
             if(B.GetColumnsCount() != this.GetColumnsCount() || B.GetRowsCount() != this.GetRowsCount())
                 throw new ArgumentException("Addition is allowed for only matrixes of the identical size.","B");
@@ -256,6 +259,7 @@ namespace CSharpDataStructures.Vectors {
             return new Matrix(t);
         }
         
+        //RETURNS: new Matrix.
         public Matrix Mull(Matrix B){
             if(this.GetColumnsCount() != B.GetRowsCount())
                 throw new ArgumentException("Count of Columns in Matrix A must be equal to count of rows in Matrix B.","B");
@@ -292,7 +296,7 @@ namespace CSharpDataStructures.Vectors {
         }
         
         //Recursive Descend by Row.  
-        //MAKE NON-RECURSIVE
+        /*
         private Double __GetDeterminant(){
             if(!this.Squared)
                 return Double.PositiveInfinity;
@@ -320,8 +324,17 @@ namespace CSharpDataStructures.Vectors {
                 r+= d*this[i,0]*RJ.__GetDeterminant();
             }
             return r;
+        }*/
+        
+        public Int32 ContainsZeroRow(){
+            for(Int32 i = 0; i < _rowsc; i++){
+                if(__HasZeroRow(_base[i]))
+                    return i;
+            }
+            return -1;
         }
         
+        //NON-RECURSIVE (ITERATIVE) Descent by Row.
         private Double __GetNRDeterminant(){
             if(!this.Squared)
                 return Double.PositiveInfinity;
@@ -341,7 +354,60 @@ namespace CSharpDataStructures.Vectors {
                     return 0d;
             }
             STACK S = new STACK();
-            return -1d;
+            STACK2 S2 = new STACK2();
+            for(Int32 i = 0; i < _rowsc; i++){
+                Double d = Math.Pow(-1,(i+1)+1);//(-1)^i+j. where j == 1 and i+1 == i from N.
+                Matrix RJ = new Matrix(this,i,0);
+                S.Push(new SMatrixEntry(){Multiplier = d*this[i,0], SubMatrix = RJ, IsDivided = false});
+            }
+            double m_i = 0d;
+            byte state = 0;
+            while(!S.IsEmpty()){
+                SMatrixEntry item = S.Top();
+                Double d1 = item.Multiplier;
+                Matrix sm = item.SubMatrix;
+                if(sm.GetRowsCount() == 3){
+                    m_i += d1*((sm[0,0]*sm[1,1]*sm[2,2])+(sm[0,1]*sm[1,2]*sm[2,0])+(sm[1,0]*sm[2,1]*sm[0,2])
+                    - (sm[0,2]*sm[1,1]*sm[2,0]) - (sm[0,0]*sm[1,2]*sm[2,1]) - (sm[0,1]*sm[1,0]*sm[2,2]));
+                    state = 4;
+                    S.Pop();
+                }
+                else {
+                    if(state == 4){
+                        S2.Push(item.Multiplier * m_i);
+                        m_i = 0d;
+                        state = 0;
+                        S.Pop();
+                    }
+                    else if(item.IsDivided) {
+                        double nm_i = 0d;
+                        int itrs = sm.GetRowsCount();
+                        while(itrs > 0 && !S2.IsEmpty()){
+                            nm_i += S2.Top();
+                            S2.Pop();
+                            itrs--;
+                        }
+                        S2.Push(nm_i * item.Multiplier);
+                        //Console.WriteLine("Count of members: "+S2.Count);
+                        S.Pop();
+                    }
+                    else {
+                        item.IsDivided = true;
+                        for(Int32 j = 0; j < sm.GetRowsCount(); j++){
+                            Double d_j = Math.Pow(-1,(j+1)+1);//(-1)^i+j. where j == 1 and i+1 == i from N.
+                            Matrix RJ_j = new Matrix(sm,j,0);
+                            S.Push(new SMatrixEntry(){Multiplier = d_j*sm[j,0], SubMatrix = RJ_j, IsDivided = false});
+                        }
+                    }
+                }
+            }
+            while(!S2.IsEmpty()){
+                r += S2.Top();
+                S2.Pop();
+            }
+            if(state == 4)
+                return m_i;
+            return r;
         }
         
         //clear matrix from 0..0 rows.
@@ -910,7 +976,8 @@ namespace CSharpDataStructures.Vectors {
             get {
                 if(Double.IsPositiveInfinity(_det) || _changedM){
                     _changedM = false;
-                    _det = __GetDeterminant();
+                    _det = MatrixDeterminant();
+                    //_det = __GetNRDeterminant();
                 }
                 return _det;
             }
