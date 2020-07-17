@@ -8,7 +8,7 @@ using CSharpDataStructures.Structures.Lists;
 using CSharpDataStructures.Structures.Sets;
 namespace CSharpDataStructures.Structures.Trees {
     //2-3 TREE FOR REPRESENTING SETS
-    class TwoThreeTree<T> : ITree<T>, ISet<T>, ICollection<T>, IEnumerable<T>, IEquatable<TwoThreeTree<T>> {
+    public class TwoThreeTree<T> : ITree<T>, ISet<T>, ICollection<T>, IEnumerable<T>, IEquatable<TwoThreeTree<T>> {
         private TwoThreeNode<T> _r;
         private Int32 _count;
         private Int32 _h;

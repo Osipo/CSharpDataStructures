@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 namespace CSharpDataStructures.Counters {
-    class Counter<T> {
+    public class Counter<T> {
         private IEnumerable<T> _li;
         private Dictionary<T,Int32> d;
         public Counter(IEnumerable<T> list){

@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 namespace CSharpDataStructures.Structures.Sets {
-    interface IMFSet<T> {
+    public interface IMFSet<T> {
         ISet<T> Merge(ISet<T> A, ISet<T> B);
         bool Contains(T item);
         T First();

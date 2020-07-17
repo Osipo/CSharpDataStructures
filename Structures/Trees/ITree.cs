@@ -5,7 +5,7 @@ using System.Text;
 using System.Linq;
 using CSharpDataStructures.Structures.Trees.Visitors;
 namespace CSharpDataStructures.Structures.Trees {
-    interface ITree<T> {
+    public interface ITree<T> {
         Node<T> Parent(Node<T> node);
         Node<T> LeftMostChild(Node<T> node);
         Node<T> RightSibling(Node<T> node);

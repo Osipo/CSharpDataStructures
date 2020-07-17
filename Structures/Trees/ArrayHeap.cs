@@ -10,7 +10,7 @@ namespace CSharpDataStructures.Structures.Trees {
     //Binary Tree which implements Priority Queue.
     //Based on Array.
     //Uses the presentation of the Heap.
-    class ArrayHeap<T> : ITree<T>, IEnumerable<T>, IEnumerable{
+    public class ArrayHeap<T> : ITree<T>, IEnumerable<T>, IEnumerable{
         private NodeHeap<T>[] _cellspace;
         private Int32 _count;
         private Int32 _capacity; //maxsize of array

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 namespace CSharpDataStructures.Structures.Lists {
     //Stack is list where DELETE AND INSERT operations are avaliable only at the beginning of the list. (LIFO)
-    class Stack<T> : ICollection<T>, IStack<T>, IEnumerable<T>, IEnumerable {
+    public class Stack<T> : ICollection<T>, IStack<T>, IEnumerable<T>, IEnumerable {
         private Int32 _top;//pointer to the top of the stack.
         private Int32 _count;//count
         private Int32 _maxlength;//capacity.

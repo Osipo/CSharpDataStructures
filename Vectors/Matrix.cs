@@ -8,8 +8,8 @@ using System.Collections.Generic;
 using STACK = CSharpDataStructures.Structures.Lists.LinkedStack<CSharpDataStructures.Vectors.SMatrixEntry>;
 using STACK2 = CSharpDataStructures.Structures.Lists.LinkedStack<System.Double>;
 namespace CSharpDataStructures.Vectors {
-    enum MatrixReduce { ByRow = 1, ByColumn = 2}
-    class Matrix : IDisposable, IEnumerable<Double> {
+    public enum MatrixReduce { ByRow = 1, ByColumn = 2}
+    public class Matrix : IDisposable, IEnumerable<Double> {
         private Double[][] _base;
         private Int32 _rowsc;
         private Int32 _columnsc;
@@ -296,7 +296,7 @@ namespace CSharpDataStructures.Vectors {
         }
         
         //Recursive Descend by Row.  
-        /*
+        
         private Double __GetDeterminant(){
             if(!this.Squared)
                 return Double.PositiveInfinity;
@@ -324,7 +324,7 @@ namespace CSharpDataStructures.Vectors {
                 r+= d*this[i,0]*RJ.__GetDeterminant();
             }
             return r;
-        }*/
+        }
         
         public Int32 ContainsZeroRow(){
             for(Int32 i = 0; i < _rowsc; i++){
@@ -405,7 +405,7 @@ namespace CSharpDataStructures.Vectors {
                 r += S2.Top();
                 S2.Pop();
             }
-            if(state == 4)
+            if(state == 4)//size: 4x4
                 return m_i;
             return r;
         }

@@ -1,6 +1,6 @@
 using System;
 namespace CSharpDataStructures.Algorithms.Searching {
-    class FibSearch {
+    public class FibSearch {
         public int min(int x, int y)  
         { 
             return (x <= y)? x : y;  
@@ -11,7 +11,7 @@ namespace CSharpDataStructures.Algorithms.Searching {
         //T(N) = c * (1,62^n)
         //For Binary search = 2 * c * log_2 n + O(1)
         //+ unique subsequences.
-        //+ operators +/- insteadof division
+        //+ operators +/- instead of division
         public int fibMonaccianSearch(int[] arr, int x){
             int fm2 = 0; //Fib(m - 2)
             int fm1 = 1; //Fib(m - 1)

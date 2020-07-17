@@ -18,7 +18,7 @@ namespace CSharpDataStructures.Structures.Trees {
     //You can add element to the tree from the 1 to the N dept.
     //You can choose parent of the tree on the dept-1.
     //This parameter is represented as np and it can be from the 0 to the N.
-    class ArrayTree<T> : ITree<T>, IMutableTree<T>, IPositionalTree<T> {
+    public class ArrayTree<T> : ITree<T>, IMutableTree<T>, IPositionalTree<T> {
         private NodeCell<T>[] _cellspace;
         private Int32 _count;//
         private Int32 _capacity;

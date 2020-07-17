@@ -9,7 +9,7 @@ namespace CSharpDataStructures.Structures.Trees {
     ///Реализует интерфейсы ITree<typeparamref name="T"/>
     ///и IPositionalTree<typeparamref name="T"/>
     ///</summary>
-    class LinkedTree<T> : ITree<T>, IPositionalTree<T> {
+    public class LinkedTree<T> : ITree<T>, IPositionalTree<T> {
         private Int32 _count;
         private LinkedNode<T> _r;
         private IVisitor<T> _visitor;

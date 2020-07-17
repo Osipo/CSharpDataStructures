@@ -5,7 +5,7 @@ using CSharpDataStructures.Structures.Trees;
 using CSharpDataStructures.Structures.Trees.Visitors;
 namespace CSharpDataStructures.Algorithms
 {
-    class HeapSort{
+    public class HeapSort{
         
         public Int32 P(Int32 e){
             return e;

@@ -5,7 +5,7 @@ using System.Text;
 using System.Linq;
 using CSharpDataStructures.Structures.Trees.Visitors;
 namespace CSharpDataStructures.Structures.Trees {
-    interface IPositionalTree<T> : ITree<T> {
+    public interface IPositionalTree<T> : ITree<T> {
         void AddTo(Node<T> n, T item);
         Node<T> RightMostChild(Node<T> n);
         IList<Node<T>> GetChildren(Node<T> n);

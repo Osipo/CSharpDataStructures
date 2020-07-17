@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 namespace CSharpDataStructures.Structures.Maps {
-    class LinkedDictionary<K,V> : IDictionary<K,V>, ICollection<KeyValuePair<K,V>>, IEnumerable<KeyValuePair<K,V>>, IEnumerable {
+    public class LinkedDictionary<K,V> : IDictionary<K,V>, ICollection<KeyValuePair<K,V>>, IEnumerable<KeyValuePair<K,V>>, IEnumerable {
         private Int32 _count;
         private IList<KeyValuePair<K,V>> _entries;
         private Boolean _overrideVals;

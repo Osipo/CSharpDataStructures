@@ -161,7 +161,11 @@ namespace CSharpDataStructures
             Console.WriteLine("Matrix S2: \n"+S2);
             Console.WriteLine("det S2 = "+S2.Determinant);
             
-            
+            int N = Naturals.Next;
+            while(N < 1000){
+                Console.WriteLine("N = {0}",N);
+                N = Naturals.Next;
+            }
             //Console.WriteLine(E.ToXml());
             //Console.WriteLine(F2.ToXml());
             //Console.WriteLine(F2*F2.GetInverse());

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 namespace CSharpDataStructures.Structures.Trees.Visitors {
-    interface IVisitor<T> {
+    public interface IVisitor<T> {
         void PreOrder(ITree<T> n, Action<Node<T>> act = null);
         void PreOrder(ITree<T> t, Node<T> n, Action<Node<T>> act = null);
         

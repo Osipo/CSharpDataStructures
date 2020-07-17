@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 namespace CSharpDataStructures.Structures.Lists {
-    class ArrayCyclicQueue<T> : ICollection<T>, IEnumerable<T>, IEnumerable {
+    public class ArrayCyclicQueue<T> : ICollection<T>, IEnumerable<T>, IEnumerable {
         private T[] _base;
         private Int32 _front;
         private Int32 _rear;

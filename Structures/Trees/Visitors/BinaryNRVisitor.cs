@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 namespace CSharpDataStructures.Structures.Trees.Visitors {
-    class BinaryNRVisitor<T> : NRVisitor<T>, IVisitor<T> {
+    public class BinaryNRVisitor<T> : NRVisitor<T>, IVisitor<T> {
         
         
         //SYMMETRIC BSTREE TRAVERSAL WITHOUT RECURSION

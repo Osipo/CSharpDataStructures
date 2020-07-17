@@ -4,7 +4,7 @@ using CSharpDataStructures.Structures.Lists;
 namespace CSharpDataStructures.Algorithms {
     internal enum StackStatus { None, Included, Excluded }; //Method's call status.
     // Задача о рюкзаке. Упрощенная. Нужно определить можно ли из набора весов w1..wn составить их сумму равную s > 0.
-    internal sealed class Knapsack {
+    public sealed class Knapsack {
         private Int32[] weights;
         public Knapsack(Int32[] weights){
             this.weights = weights;

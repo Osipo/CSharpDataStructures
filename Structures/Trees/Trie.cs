@@ -11,7 +11,7 @@ namespace CSharpDataStructures.Structures.Trees {
     /// Последний оператор представляет из себя объединение операторов CONTAINS(key) и GETVALUEOF(key)
     /// Cм. метод TryGetValue(key, out value)
     /// </summary>
-    class Trie<Leaf> : IEnumerable<Leaf>, IEnumerable where Leaf : class, new() {
+    public class Trie<Leaf> : IEnumerable<Leaf>, IEnumerable where Leaf : class, new() {
         private readonly TREE _tree;
         
         /// <summary>

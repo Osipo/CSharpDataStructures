@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using CSharpDataStructures.Structures.Lists.Enumerators;
 namespace CSharpDataStructures.Structures.Lists {
-    class LinkedList<T> : IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable{
+    public class LinkedList<T> : IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable{
         private ElementType<T> _head;//pointer to the first element. (->) Ignored:: Element field.
         private ElementType<T> _tail;//last element of the list.
         

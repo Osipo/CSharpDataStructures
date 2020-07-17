@@ -5,7 +5,7 @@ using System.Text;
 using System.Linq;
 using CSharpDataStructures.Structures.Lists;
 namespace CSharpDataStructures.Structures.Sequences {
-    class Sequence {
+    public class Sequence {
         protected IFormulaParser _par;
         protected String _expr;
         protected LinkedStack<String> _parsedExpr;

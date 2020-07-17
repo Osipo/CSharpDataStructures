@@ -3,7 +3,7 @@ using System.Text;
 using System.Collections.Generic;
 using CSharpDataStructures.Structures.Lists;
 namespace CSharpDataStructures.Structures.Sequences {
-    class ArithmeticSyntaxParser : IFormulaParser {
+    public class ArithmeticSyntaxParser : IFormulaParser {
         public ArithmeticSyntaxParser(){
         }
         

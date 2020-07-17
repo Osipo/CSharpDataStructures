@@ -1,6 +1,6 @@
 using System;
 namespace CSharpDataStructures.Structures.Lists {
-    interface IStack<T> {
+    public interface IStack<T> {
         void Push(T item);
         void Pop();
         void Clear();

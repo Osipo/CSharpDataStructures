@@ -8,7 +8,7 @@ namespace CSharpDataStructures.Structures.Sets {
     
     ///<summary>Представляет реализацию множества
     ///на основе односвязного линейного списка</summary>
-    class SortedLinkedList<T> : IEquatable<SortedLinkedList<T>>, IEnumerable<T>, ISet<T>, ICollection<T>, IMFSet<T> {
+    public class SortedLinkedList<T> : IEquatable<SortedLinkedList<T>>, IEnumerable<T>, ISet<T>, ICollection<T>, IMFSet<T> {
         private ElementType<T> _head;//pointer to the first element. (->) Ignored:: Element field.
         private ElementType<T> _tail;//for adding sorted elements.
         private IComparer<T> _comp;

@@ -8,7 +8,7 @@ using CSharpDataStructures.Structures.Lists;
 using CSharpDataStructures.Structures.Sets;
 namespace CSharpDataStructures.Structures.Trees {
     //BTS type for representing SETS
-    class BinarySearchTree<T> : ITree<T>, ISet<T>, IEquatable<BinarySearchTree<T>>, IEnumerable<T>, ICollection<T> {
+    public class BinarySearchTree<T> : ITree<T>, ISet<T>, IEquatable<BinarySearchTree<T>>, IEnumerable<T>, ICollection<T> {
         private LinkedBinaryNode<T> _r;
         private Int32 _count;
         private Int32 _h;
@@ -525,7 +525,7 @@ namespace CSharpDataStructures.Structures.Trees {
             if(np == null){
                 return null;
             }
-            return np.LeftSon != null ? np.LeftSon : np.RightSon;
+            return np.LeftSon;
         }
         
         

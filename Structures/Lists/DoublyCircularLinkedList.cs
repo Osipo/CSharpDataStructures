@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using CSharpDataStructures.Structures.Lists.Enumerators;
 namespace CSharpDataStructures.Structures.Lists {
-    class DoublyCircularLinkedList<T> : IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable{
+    public class DoublyCircularLinkedList<T> : IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable{
         private DoubleElementType<T> _head;//pointer to the first element. (->) Ignored:: Element field.
         private DoubleElementType<T> _tail;//tail
         

@@ -6,7 +6,7 @@ using System.Linq;
 using CSharpDataStructures.Structures.Lists;
 using CSharpDataStructures.Structures.Maps;
 namespace CSharpDataStructures.Structures.Sequences {
-    class ParamsSequence : Sequence {
+    public class ParamsSequence : Sequence {
         private ArrayMap<String,Double> _prms;
         public ParamsSequence(String expr, IFormulaParser p, ArrayMap<String,Double> paramList) : base(expr, p){
             this._prms = paramList;

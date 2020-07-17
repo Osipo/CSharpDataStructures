@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 namespace CSharpDataStructures.Structures.Maps {
-    class ArrayMap<T,R> : IEnumerable<R>, IEnumerable {
+    public class ArrayMap<T,R> : IEnumerable<R>, IEnumerable {
         private Int32 _count;
         private T[] _domain;
         private R[] _range;

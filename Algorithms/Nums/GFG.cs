@@ -1,6 +1,6 @@
 using System;
 namespace CSharpDataStructures.Algorithms.Nums {
-    class GFG {
+    public class GFG {
         public int Fact(int N){
             Int32 r = 1;
             while(N > 0){

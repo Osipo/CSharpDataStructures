@@ -7,7 +7,7 @@ using CSharpDataStructures.Structures.Sets;
 using CSharpDataStructures.Structures.Trees;
 using CSharpDataStructures.Structures.Trees.Visitors;
 namespace CSharpDataStructures.Algorithms.Trees{
-    class TreeAlgo{
+    public class TreeAlgo{
         public TreeAlgo(){}
         
         public void Execute(){

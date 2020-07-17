@@ -4,7 +4,7 @@ using System.Text;
 using System.Collections;
 using System.Collections.Generic;
 namespace CSharpDataStructures.Structures.Lists {
-    class ArrayList<T> : IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable {
+    public class ArrayList<T> : IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable {
         private T[] _base;
         private Int32 _last;//pointer to the last element of the list. (index)
         private Int32 _capacity;

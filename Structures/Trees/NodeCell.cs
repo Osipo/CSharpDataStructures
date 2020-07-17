@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 namespace CSharpDataStructures.Structures.Trees {
-    class NodeCell<T> : Node<T>{
+    public class NodeCell<T> : Node<T>{
         private Int32 _dept;
        
         public NodeCell(Int32 d){

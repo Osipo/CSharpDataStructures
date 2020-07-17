@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace CSharpDataStructures.Structures.Lists {
     //Queue is list where DELETE AND INSERT operations are avaliable only 
     //at the beginning and at the end of the list respectively. (FIFO)
-    class LinkedQueue<T> : ICollection<T>, IEnumerable<T>, IEnumerable{
+    public class LinkedQueue<T> : ICollection<T>, IEnumerable<T>, IEnumerable{
         protected ElementType<T> _front;//pointer to the first element. (->) Ignored:: Element field.
         protected ElementType<T> _rear;//pointer to the last element. (->)
         protected Int32 _count;

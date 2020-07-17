@@ -1,7 +1,7 @@
 using System;
 namespace CSharpDataStructures.Randomizers.Numeric {
     //Generates Random Sequence of Natural Numbers (1,2,3,...N) where N = B - 1 AND where B is upperBound
-    class PositiveRandomizer {
+    public class PositiveRandomizer {
         private Int32 _b;//returns from 1 to b-1 inclusive.
         private Int32 _seed;//first element of the sequence
         private Int32 _k;

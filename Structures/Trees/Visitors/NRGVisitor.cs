@@ -3,7 +3,7 @@ using System.Text;
 using CSharpDataStructures.Structures.Lists;
 using CSharpDataStructures.Structures.Trees;
 namespace CSharpDataStructures.Structures.Trees.Visitors {
-    class NRGVisitor<T,S> where S : IStack<Node<T>>, new() {
+    public class NRGVisitor<T,S> where S : IStack<Node<T>>, new() {
         
         public void PreOrder(ITree<T> tree, Action<Node<T>> act = null){
             Node<T> m = tree.Root();//ROOT(T)

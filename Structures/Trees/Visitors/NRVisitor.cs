@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 namespace CSharpDataStructures.Structures.Trees.Visitors {
-    class NRVisitor<T> : IVisitor<T> {
+    public class NRVisitor<T> : IVisitor<T> {
         
         public void PreOrder(ITree<T> tree, Action<Node<T>> act = null){
             Node<T> m = tree.Root();//ROOT(T)

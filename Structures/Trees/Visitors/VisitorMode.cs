@@ -1,6 +1,6 @@
 using System;
 namespace CSharpDataStructures.Structures.Trees.Visitors {
-    enum VisitorMode {
+    public enum VisitorMode {
         PRE,
         POST,
         IN

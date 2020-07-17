@@ -3,7 +3,7 @@ using System.Text;
 using System.Collections;
 using System.Collections.Generic;
 namespace CSharpDataStructures.Structures.Lists {
-    class LinkedPriorityQueue<T> : LinkedQueue<T>{
+    public class LinkedPriorityQueue<T> : LinkedQueue<T>{
         private Func<T,Int32> _p;
         public LinkedPriorityQueue(Func<T,Int32> prior){
             this._p = prior;
