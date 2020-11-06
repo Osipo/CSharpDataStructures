@@ -135,28 +135,24 @@ namespace CSharpDataStructures.Structures.Trees {
         ///<summary>Возвращает итератор, перечисляющий элементы индексатора
         ///IndexEntry</summary>
         public IEnumerator<Leaf> GetEnumerator(){
-            HashSet<Object> hs = new HashSet<Object>();
             CSharpDataStructures.Structures.Lists.LinkedList<Leaf> E = 
                 new CSharpDataStructures.Structures.Lists.LinkedList<Leaf>();
             STACK S = new STACK();
             S.Push(_tree);
             while(!S.IsEmpty()){
                 Object b = S.Top();
-                if(hs.Contains(b)){
-                    S.Pop();
+                S.Pop();
+                LinkedDictionary<Char,Object> children = (LinkedDictionary<Char,Object>) b;
+                
+                ICollection<Char> keys = children.Keys;
+                foreach(Char k in keys){
+                    if (k == '$')
+                        continue;
+                    S.Push(children.GetValue(k));
                 }
-                else if(b is Leaf){
-                    S.Pop();
-                    E.Add((Leaf) b);
-                    //yield return (IndexEntry) b;
-                }
-                else{
-                    hs.Add(b);
-                    ICollection<Object> children = ((LinkedDictionary<Char,Object>) b).Values;
-                    foreach(Object it in children){
-                        S.Push(it);
-                    }
-                }
+                if(children.ContainsKey('$') && children.GetValue('$') != null)
+                    E.add((Leaf) children.GetValue('$'));
+                
             }
             return E.GetEnumerator();
         }
